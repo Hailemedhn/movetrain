@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Move Train</title>
+    <style>
+      img {
+        position: relative;
+        left: 100px;
+        top: 0px;
+        transition: all 2s ease;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="image/train.jpg" alt="train" />
+    <div>
+      <button type="button" id="movePic">Come Here</button>
+    </div>
+    <script>
+      const button = document.getElementById("movePic");
+      let move = true;
+
+      button.addEventListener("click", () => {
+        if (move) {
+          document.querySelector("img").style.left = "300px";
+          button.innerHTML = "Go Back";
+          move = false;
+        } else {
+          document.querySelector("img").style.left = "100px";
+          button.innerHTML = "Come Here";
+          move = true;
+        }
+      });
+    </script>
+  </body>
+</html>
